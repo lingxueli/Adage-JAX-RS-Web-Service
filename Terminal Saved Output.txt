@@ -1,0 +1,57 @@
+Last login: Tue Oct 18 15:02:27 on ttys002
+You have mail.
+clingxueli ~ $ cd /Users/lingxueli/Documents/workspace/Jersey
+lingxueli Jersey $ ant -Dwar.name=adages deploy
+Buildfile: /Users/lingxueli/Documents/workspace/Jersey/build.xml
+
+clean:
+
+prepare:
+    [mkdir] Created dir: /Users/lingxueli/Documents/workspace/Jersey/build
+    [mkdir] Created dir: /Users/lingxueli/Documents/workspace/Jersey/build/WEB-INF
+    [mkdir] Created dir: /Users/lingxueli/Documents/workspace/Jersey/build/WEB-INF/classes
+    [mkdir] Created dir: /Users/lingxueli/Documents/workspace/Jersey/build/WEB-INF/lib
+    [mkdir] Created dir: /Users/lingxueli/Documents/workspace/Jersey/build/WEB-INF/data
+     [copy] Copying 4 files to /Users/lingxueli/Documents/workspace/Jersey/build
+     [copy] Copying 1 file to /Users/lingxueli/Documents/workspace/Jersey/build/WEB-INF
+     [copy] Copying 7 files to /Users/lingxueli/Documents/workspace/Jersey/build/WEB-INF/lib
+
+compile:
+    [javac] /Users/lingxueli/Documents/workspace/Jersey/build.xml:165: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 4 source files to /Users/lingxueli/Documents/workspace/Jersey/build/WEB-INF/classes
+
+BUILD FAILED
+/Users/lingxueli/Documents/workspace/Jersey/build.xml:165: /home/mkalin/tomcat7/lib does not exist.
+
+Total time: 0 seconds
+lingxueli Jersey $ ant -Dwar.name=adages deploy
+Buildfile: /Users/lingxueli/Documents/workspace/Jersey/build.xml
+
+clean:
+   [delete] Deleting directory /Users/lingxueli/Documents/workspace/Jersey/build
+
+prepare:
+    [mkdir] Created dir: /Users/lingxueli/Documents/workspace/Jersey/build
+    [mkdir] Created dir: /Users/lingxueli/Documents/workspace/Jersey/build/WEB-INF
+    [mkdir] Created dir: /Users/lingxueli/Documents/workspace/Jersey/build/WEB-INF/classes
+    [mkdir] Created dir: /Users/lingxueli/Documents/workspace/Jersey/build/WEB-INF/lib
+    [mkdir] Created dir: /Users/lingxueli/Documents/workspace/Jersey/build/WEB-INF/data
+     [copy] Copying 4 files to /Users/lingxueli/Documents/workspace/Jersey/build
+     [copy] Copying 1 file to /Users/lingxueli/Documents/workspace/Jersey/build/WEB-INF
+     [copy] Copying 7 files to /Users/lingxueli/Documents/workspace/Jersey/build/WEB-INF/lib
+
+compile:
+    [javac] /Users/lingxueli/Documents/workspace/Jersey/build.xml:165: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 4 source files to /Users/lingxueli/Documents/workspace/Jersey/build/WEB-INF/classes
+
+deploy:
+      [war] Building war: /Users/lingxueli/Documents/workspace/Jersey/adages.war
+     [copy] Copying 1 file to /Users/lingxueli/apache-tomcat-8.0.36/webapps
+
+BUILD SUCCESSFUL
+Total time: 1 second
+lingxueli Jersey $ curl http://localhost:8080/adages/resourcesA
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><adage><wordCount>14</wordCount><words>Philosophy is a battle against the bewitchment of our intelligence by means of language.</words></adage>lingxueli Jersey $ curl http://localhost:8080/adages/resourcesA/json
+{"words":"What can be shown cannot be said.","wordCount":7}lingxueli Jersey $ curl http://localhost:8080/adages/resourcesA/plain
+If a lion could talk, we could not understand him. -- 10 words
+lingxueli Jersey $ 
